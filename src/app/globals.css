@@ -3,25 +3,49 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #ffffff;
+	--foreground: #171717;
+	--primery: #28a745;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	color: var(--foreground);
+	background: var(--background);
+	font-family: Yekan Bakh, Arial, Helvetica, sans-serif;
+	max-width: 1440px;
+	margin: auto;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+.login-btn {
+	@apply border-2 border-primery rounded-[8px] w-[166px] h-[44px] flex items-center justify-center gap-2 cursor-pointer;
+}
+.login-form-container {
+  @apply absolute flex items-center justify-center top-0 left-0 w-full h-full bg-[#00000030] backdrop-blur-[2px]
+}
+.login-form , .otp-form {
+  @apply w-[571px] h-[362px] bg-white rounded-[20px] p-10 relative
+}
+.login-form-title , .otp-form-title {
+ @apply text-center font-semibold mt-8 text-[#282828] text-[28px]
+}
+.login-form-input {
+ @apply border border-[#00000025] rounded-md w-full h-[54px] px-4 placeholder:text-[15px]
+}
+.login-form-submit-btn ,.otp-form-sunmit-btn{
+ @apply block bg-primery text-white font-medium text-[18px] border border-[#00000025] rounded-md w-full h-[54px] mt-10
+}
+.otp-form-sunmit-btn {
+	@apply mt-5
 }
