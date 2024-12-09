@@ -5,19 +5,24 @@ import OtpInput from "react18-input-otp";
 import Image from "next/image";
 import arrowImg from "../../../assets/image/arrow-left.png";
 import { useSendOtp } from "@/core/services/mutations";
+import { useTimer } from "react-timer-hook";
+import Timer from "@/components/common/Timer";
 
 const OtpForm = ({ number, setIsOtpShow, setIsShowLogin }) => {
 	const [otp, setOtp] = useState();
 	const { mutate } = useSendOtp();
+	const otpShowTime = new Date();
+	otpShowTime.setSeconds(otpShowTime.getSeconds() + 120);
+
 	const handleOtpChange = (enteredOtp) => {
 		setOtp(enteredOtp);
 	};
 	const sendOtp = () => {
 		mutate(
-			{mobile: number, code: otp},
+			{ mobile: number, code: otp },
 			{
 				onSuccess: (data) => {
-					console.log("succes", data.data)
+					console.log("succes", data.data);
 					setCookie("accessToken", data.data.accessToken);
 					setCookie("refreshToken", data.data.refreshToken);
 					setIsShowLogin(false);
@@ -25,9 +30,6 @@ const OtpForm = ({ number, setIsOtpShow, setIsShowLogin }) => {
 				onError: (error) => console.log(error),
 			}
 		);
-
-
-		
 	};
 	return (
 		<div
@@ -48,9 +50,9 @@ const OtpForm = ({ number, setIsOtpShow, setIsShowLogin }) => {
 				onChange={handleOtpChange}
 				numInputs={6}
 			/>
-			<p className="text-[14px] font-light text-[#282828] mt-3">
-				1:24 تا ارسال مجدد کد
-			</p>
+
+			<Timer expiryTimestamp={otpShowTime} setIsOtpShow={setIsOtpShow} />
+
 			<button onClick={sendOtp} className="otp-form-sunmit-btn">
 				ورود به تورینو
 			</button>
