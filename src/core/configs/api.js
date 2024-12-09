@@ -11,11 +11,11 @@ api.interceptors.request.use((request) => {
 	const token = getCookie("accessToken");
 	if (token) {
 		request.headers["Authorization"] = `Bearer ${token}`;
-	} 
-    return request;
+	}
+	return request;
 });
 api.interceptors.response.use((response) => {
-    return response;
-  });
-  
-  export default api;
+	return response;
+});
+
+export default api;

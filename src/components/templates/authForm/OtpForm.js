@@ -1,32 +1,39 @@
 "use client";
-import { setCookie } from "@/utils/cookie";
+import { setCookie } from "@/core/utils/cookie";
 import { useState } from "react";
 import OtpInput from "react18-input-otp";
 import Image from "next/image";
-import arrowImg from "../../assets/arrow-left.png"
+import arrowImg from "../../../assets/image/arrow-left.png";
+import { useSendOtp } from "@/core/services/mutations";
 
-const OtpForm = ({ number , setIsOtpShow , setIsShowLogin}) => {
+const OtpForm = ({ number, setIsOtpShow, setIsShowLogin }) => {
 	const [otp, setOtp] = useState();
+	const { mutate } = useSendOtp();
 	const handleOtpChange = (enteredOtp) => {
 		setOtp(enteredOtp);
 	};
-	const sendOtp = async () => {
-		const res = await fetch("http://localhost:6500/auth/check-otp", {
-			method: "POST",
-			body: JSON.stringify({
-				mobile: number,
-				code: otp,
-			}),
-			headers: { "Content-Type": "application/json" },
-		});
-		const data = await res.json();
+	const sendOtp = () => {
+		mutate(
+			{mobile: number, code: otp},
+			{
+				onSuccess: (data) => {
+					console.log("succes", data.data)
+					setCookie("accessToken", data.data.accessToken);
+					setCookie("refreshToken", data.data.refreshToken);
+					setIsShowLogin(false);
+				},
+				onError: (error) => console.log(error),
+			}
+		);
 
-    setCookie("accessToken" , data.accessToken)
-    setCookie("refreshToken", data.refreshToken)
-    setIsShowLogin(false)
+
+		
 	};
 	return (
-		<div onClick={e => e.stopPropagation()} className="otp-form flex flex-col items-center">
+		<div
+			onClick={(e) => e.stopPropagation()}
+			className="otp-form flex flex-col items-center"
+		>
 			<h1 className="otp-form-title">کد تایید را وارد کنید.</h1>
 			<p className="mt-2 mb-4">کد تایید به شماره {number} ارسال شد</p>
 			<OtpInput
@@ -47,7 +54,12 @@ const OtpForm = ({ number , setIsOtpShow , setIsShowLogin}) => {
 			<button onClick={sendOtp} className="otp-form-sunmit-btn">
 				ورود به تورینو
 			</button>
-      <Image onClick={() => setIsOtpShow(false)} className="absolute top-4 left-4 cursor-pointer" src={arrowImg}  alt="arrow icon"/>
+			<Image
+				onClick={() => setIsOtpShow(false)}
+				className="absolute top-4 left-4 cursor-pointer"
+				src={arrowImg}
+				alt="arrow icon"
+			/>
 		</div>
 	);
 };

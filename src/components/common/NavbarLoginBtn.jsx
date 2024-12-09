@@ -1,11 +1,11 @@
 "use client";
-import userLogo from "../../assets/user.png";
+import userLogo from "../../assets/image/user.png";
 import Image from "next/image";
-import LoginForm from "../templates/LoginForm";
+import LoginForm from "../templates/authForm/LoginForm";
 import { useState } from "react";
 
 const NavbarLoginBtn = () => {
-	const [isShowLogin , setIsShowLogin] = useState(false)
+	const [isShowLogin, setIsShowLogin] = useState(false);
 
 	return (
 		<>

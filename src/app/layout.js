@@ -1,8 +1,8 @@
-import Footer from "@/components/organisms/Footer";
+import Footer from "@/components/common/Footer";
 import "../assets/font/font.css";
 import "./globals.css";
-import Navbar from "@/components/organisms/Navbar";
-import ReactQueryProvider from "@/providers/ReactQueryProvider";
+import Navbar from "@/components/common/Navbar";
+import ReactQueryProvider from "@/components/providers/ReactQueryProvider";
 
 export const metadata = {
 	title: "Torino | تورینو",
