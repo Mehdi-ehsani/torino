@@ -1,6 +1,10 @@
+import Header from "../common/Header"
+
 const Homepage = () => {
   return (
-    <div></div>
+    <div>
+      <Header/>
+    </div>
   )
 }
 

@@ -1,11 +1,11 @@
 "use client";
+import OtpInput from "react18-input-otp";
+
 import { setCookie } from "@/core/utils/cookie";
 import { useState } from "react";
-import OtpInput from "react18-input-otp";
 import Image from "next/image";
 import arrowImg from "../../../assets/image/arrow-left.png";
 import { useSendOtp } from "@/core/services/mutations";
-import { useTimer } from "react-timer-hook";
 import Timer from "@/components/common/Timer";
 
 const OtpForm = ({ number, setIsOtpShow, setIsShowLogin }) => {

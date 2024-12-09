@@ -1,7 +1,7 @@
 import { useTimer } from "react-timer-hook";
 
 const Timer = ({ expiryTimestamp, setIsOtpShow }) => {
-	const { totalSeconds, seconds, minutes, isRunning } = useTimer({
+	const { seconds, minutes,} = useTimer({
 		expiryTimestamp,
 		onExpire: () => setIsOtpShow(false),
 	});

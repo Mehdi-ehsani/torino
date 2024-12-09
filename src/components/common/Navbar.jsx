@@ -25,7 +25,7 @@ const Navbar = () => {
 		{ href: "/contact", text: "تماس با ما" },
 	];
 	return (
-		<nav className="flex w-full h-[74px] items-center justify-between px-[126px]">
+		<nav className="flex w-full h-[74px] items-center justify-between px-[126px] shadow-[0px_1px_0px_#00000016]">
 			<Image priority src={Logo} width={146} height={44} alt="logo" />
 			<ul className="flex items-center gap-10">
 				{linkData.map((link) => (
