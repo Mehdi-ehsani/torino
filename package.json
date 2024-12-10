@@ -19,6 +19,7 @@
     "react18-input-otp": "^1.1.4"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.62.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.18",
     "postcss": "^8",
