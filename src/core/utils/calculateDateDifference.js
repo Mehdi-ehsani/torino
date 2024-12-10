@@ -1,5 +1,4 @@
 const calculateDateDifference = (date1, date2) => {
-
     const firstDate = new Date(date1);
     const secondDate = new Date(date2);
   
@@ -7,8 +6,9 @@ const calculateDateDifference = (date1, date2) => {
   
     const dayDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
   
-    return console.log(dayDifference);
+    return dayDifference
   };
-export default calculateDateDifference  
   
+export default calculateDateDifference  
+ 
   
