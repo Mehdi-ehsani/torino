@@ -27,6 +27,7 @@ const Footer = () => {
 					<h1 className="font-semibold text-[24px] mb-3">خدمات مشتریان</h1>
 					{linkData.map((link) => (
 						<Link
+						    key={link.text}         
 							className="text-lg text-[#282828] font-normal hover:text-primery transition-colors"
 							href={link.href}
 						>
