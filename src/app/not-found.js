@@ -1,8 +1,9 @@
-import React from 'react'
+'use client'
+import NotFoundPage from "@/components/pages/NotFoundPage"
 
 const NotFound = () => {
   return (
-    <div>NotFound</div>
+    <NotFoundPage/>
   )
 }
 
