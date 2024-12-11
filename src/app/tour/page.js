@@ -1,10 +1,7 @@
-export default async function Tours() {
-  const res = await fetch('http://localhost:6500/tour', {cache: "no-cache"});
-  const data = await res.json();
-  console.log(data)
+import ToursPage from "@/components/pages/ToursPage";
+
+export default function Tours() {
   return (
-    <div >
-      {data.map(tour => <h1 key={tour.id}>{tour.title}</h1>)}
-    </div>
+    <ToursPage/>
   );
 }
