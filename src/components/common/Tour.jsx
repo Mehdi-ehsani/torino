@@ -16,7 +16,8 @@ const Tour = ({tour}) => {
 			<div className=" relative w-full h-[159px]">
 				<Image
 					className="w-auto h-auto"
-					layout="fill"
+					fill
+					sizes="width: auto , height: auto"
 					src={tour.image}
 					alt="tour img"
 				/>
