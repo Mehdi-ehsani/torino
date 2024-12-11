@@ -9,7 +9,7 @@ const Tours = () => {
 			<h1 className="text-[32px] font-medium my-8">همه تور ها</h1>
       <div className="grid grid-cols-4 gap-7 ">
 			{data?.data?.map((tour) => (
-				<Tour tour={tour} />
+				<Tour key={tour.id} tour={tour} />
 			))}
       </div>
 		</div>
