@@ -21,7 +21,7 @@ const Footer = () => {
 	];
 	return (
 		<footer>
-			<div className="flex justify-between px-[126px] py-4">
+			<div className="flex justify-between mx-[126px] py-6 border-t border-[#00000020]">
 				<div className="grid grid-cols-2 gap-x-8 gap-y-2">
 					<h1 className="font-semibold text-[24px] mb-3">تورینو</h1>
 					<h1 className="font-semibold text-[24px] mb-3">خدمات مشتریان</h1>
