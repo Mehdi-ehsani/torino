@@ -20,7 +20,7 @@ const Navbar = () => {
 
 	const linkData = [
 		{ href: "/", text: "صفحه اصلی" },
-		{ href: "/services", text: "خدمات گردشگری" },
+		{ href: "/tour", text: "خدمات گردشگری" },
 		{ href: "/about", text: "درباره ما" },
 		{ href: "/contact", text: "تماس با ما" },
 	];
