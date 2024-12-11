@@ -1,5 +1,6 @@
 import Header from "../common/Header";
 import SearchBox from "../common/SearchBox";
+import TorinoDetail from "../common/TorinoDetail";
 import Tours from "./ToursPage";
 
 const Homepage = () => {
@@ -12,6 +13,7 @@ const Homepage = () => {
 			</h1>
 			<SearchBox />
 			<Tours />
+			<TorinoDetail/>
 		</div>
 	);
 };
