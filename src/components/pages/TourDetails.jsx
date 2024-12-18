@@ -24,7 +24,7 @@ const TourDetails = async ({ params }) => {
 
 	return (
 		<div className="w-full h-[590px] pt-14 bg-[#f3f3f3]">
-			<div className="w-[1118px] h-[427px] mx-[126px] px-6 py-7  rounded-[10px] border border-[#00000020]">
+			<div className="bg-white w-[1118px] h-[427px] mx-[126px] px-6 py-7  rounded-[10px] border border-[#00000020]">
 				<div className="flex">
 					<Image
 						className="w-[397px] h-[265px] rounded-xl"
