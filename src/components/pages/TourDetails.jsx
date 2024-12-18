@@ -2,18 +2,18 @@ import api from "@/core/configs/api";
 import calculateDateDifference from "@/core/utils/calculateDateDifference";
 import formatNumber from "@/core/utils/formatNumber";
 import Image from "next/image";
+import dateToPersian from "@/core/utils/dateToPersian";
 
 import userImg from "../../assets/image/user-tick.png"
 import mapImg from "../../assets/image/map.png"
 import starImg from "../../assets/image/medal-star.png"
-import dateToPersian from "@/core/utils/dateToPersian";
-// import userImg from "../../assets/image/user-tick.png"
-// import userImg from "../../assets/image/user-tick.png"
-// import userImg from "../../assets/image/user-tick.png"
-// import userImg from "../../assets/image/user-tick.png"
-// import userImg from "../../assets/image/user-tick.png"
-// import userImg from "../../assets/image/user-tick.png"
-// import userImg from "../../assets/image/user-tick.png"
+import routingImg from "../../assets/image/routing-2.png"
+import securityImg from "../../assets/image/security.png"
+import busImg from "../../assets/image/bus.png"
+import calendar2Img from "../../assets/image/calendar-2.png"
+import calendarImg from "../../assets/image/calendar.png"
+import profileImg from "../../assets/image/profile-2user.png"
+
 
 const TourDetails = async ({ params }) => {
 	const { id } = params;
@@ -61,48 +61,53 @@ const TourDetails = async ({ params }) => {
 						</div>
 					</div>
 				</div>
-				<div className="flex">
+				<div className="flex justify-between mt-7">
 							<div>
-								<div>
-									<Image />
-									<p>مبدا</p>
+								<div className="flex items-center gap-2 mt-4" >
+									<Image src={routingImg} alt="icon" />
+									<p className="text-[18px] text-[#444444] ">مبدا</p>
 								</div>
-								<p>{data.origin.name}</p>
+								<p className="font-medium text-[16px] text-[#000000] mt-3">{data.origin.name}</p>
 							</div>
+							<div className="w-[1px] h-[84px] bg-[#00000025]"> </div>
 							<div>
-								<div>
-									<Image />
-									<p>تاریخ رفت</p>
+								<div className="flex items-center gap-2 mt-4" >
+									<Image src={calendarImg} alt="icon"/>
+									<p className="text-[18px] text-[#444444] ">تاریخ رفت</p>
 								</div>
-								<p>{dateToPersian(data.startDate)}</p>
+								<p className="font-medium text-[16px] text-[#000000] mt-3">{dateToPersian(data.startDate)}</p>
 							</div>
+							<div className="w-[1px] h-[84px] bg-[#00000025]"> </div>
 							<div>
-								<div>
-									<Image />
-									<p>تاریخ برگشت</p>
+								<div className="flex items-center gap-2 mt-4" >
+									<Image src={calendar2Img} alt="icon" />
+									<p className="text-[18px] text-[#444444] ">تاریخ برگشت</p>
 								</div>
-								<p>{dateToPersian(data.endDate)}</p>
+								<p className="font-medium text-[16px] text-[#000000] mt-3">{dateToPersian(data.endDate)}</p>
 							</div>
+							<div className="w-[1px] h-[84px] bg-[#00000025]"> </div>
 							<div>
-								<div>
-									<Image />
-									<p>حمل ونقل</p>
+								<div className="flex items-center gap-2 mt-4" >
+									<Image src={busImg} alt="icon" />
+									<p className="text-[18px] text-[#444444] ">حمل ونقل</p>
 								</div>
-								<p>{data.fleetVehicle}</p>
+								<p className="font-medium text-[16px] text-[#000000] mt-3">{data.fleetVehicle}</p>
 							</div>
+							<div className="w-[1px] h-[84px] bg-[#00000025]"> </div>
 							<div>
-								<div>
-									<Image />
-									<p>ظرفیت</p>
+								<div className="flex items-center gap-2 mt-4" >
+									<Image src={profileImg} alt="icon"/>
+									<p className="text-[18px] text-[#444444] ">ظرفیت</p>
 								</div>
-								<p> حداکثر تا {data.availableSeats} نفر </p>
+								<p className="font-medium text-[16px] text-[#000000] mt-3"> حداکثر تا {data.availableSeats} نفر </p>
 							</div>
+							<div className="w-[1px] h-[84px] bg-[#00000025]"> </div>
 							<div>
-								<div>
-									<Image />
-									<p>بیمه</p>
+								<div className="flex items-center gap-2 mt-4" >
+									<Image src={securityImg} alt="icon" />
+									<p className="text-[18px] text-[#444444] ">بیمه</p>
 								</div>
-								<p>بیمه 50 هزار دیناری</p>
+								<p className="font-medium text-[16px] text-[#000000] mt-3">بیمه 50 هزار دیناری</p>
 							</div>
 						</div>
 			</div>

@@ -1,8 +1,8 @@
-import React from 'react'
+import TourDetails from "@/components/pages/TourDetails"
 
-const TourDetail = () => {
+const TourDetail = ({params}) => {
   return (
-    <div>TourDetail</div>
+   <TourDetails params={params}/>
   )
 }
 
