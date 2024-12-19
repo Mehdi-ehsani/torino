@@ -3,6 +3,7 @@ import calculateDateDifference from "@/core/utils/calculateDateDifference";
 import formatNumber from "@/core/utils/formatNumber";
 import Image from "next/image";
 import dateToPersian from "@/core/utils/dateToPersian";
+import Link from "next/link";
 
 import userImg from "../../assets/image/user-tick.png"
 import mapImg from "../../assets/image/map.png"
@@ -57,7 +58,7 @@ const TourDetails = async ({ params }) => {
 								{formatNumber(data.price)}
 								<span className="text-[14px] font-normal text-[#28282880]">تومان</span>
 							</h2>
-							<button className="w-[204px] h-[56px] rounded-[10px] bg-primery text-white text-[24px] ">رزرو و خرید</button>
+							<Link href={`/order?q=${id}`} className="w-[204px] h-[56px] leading-[56px] text-center rounded-[10px] bg-primery text-white text-[24px] ">رزرو و خرید</Link>
 						</div>
 					</div>
 				</div>

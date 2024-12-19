@@ -14,4 +14,10 @@ const useTours = () => {
 	};
 	return useQuery({ queryKey: ["tour"],  queryFn });
 };
-export { useProfile, useTours };
+const useTourDetail = (id) => {
+	const queryFn = () => {
+		return  api.get(`tour/${id}`);
+	};
+	return useQuery({ queryKey: ["tour/datail"],  queryFn });
+};
+export { useProfile, useTours , useTourDetail };
