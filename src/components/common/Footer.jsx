@@ -21,26 +21,26 @@ const Footer = () => {
 	];
 	return (
 		<footer>
-			<div className="flex justify-between mx-[126px] py-6 border-t border-[#00000020]">
+			<div className="flex flex-col items-center gap-5 mt-2 md:flex-row justify-between mx-[31px] lg:mx-[126px] py-6 border-t border-[#00000020]">
 				<div className="grid grid-cols-2 gap-x-8 gap-y-2">
-					<h1 className="font-semibold text-[24px] mb-3">تورینو</h1>
-					<h1 className="font-semibold text-[24px] mb-3">خدمات مشتریان</h1>
+					<h1 className="font-semibold text-[22px] lg:text-[24px] mb-3">تورینو</h1>
+					<h1 className="font-semibold text-[22px] lg:text-[24px] mb-3">خدمات مشتریان</h1>
 					{linkData.map((link) => (
 						<Link
 						    key={link.text}         
-							className="text-lg text-[#282828] font-normal hover:text-primery transition-colors"
+							className="lg:text-lg text-base text-[#282828] font-normal hover:text-primery transition-colors"
 							href={link.href}
 						>
 							{link.text}
 						</Link>
 					))}
 				</div>
-				<div className="flex flex-col items-end gap-10">
+				<div className="flex flex-row-reverse lg:flex-col items-end gap-10">
 					<div className="flex flex-col gap-4 items-end">
 						<Image src={TorinoLogo} alt="torino logo" />
 						<p>تلفن پشتیبانی: 8735-021</p>
 					</div>
-					<div className="flex gap-4">
+					<div className="grid lg:grid-cols-5 grid-cols-3  gap-4">
 						<Image src={Logo1} alt="logo" />
 						<Image src={Logo2} alt="logo" />
 						<Image src={Logo3} alt="logo" />
@@ -50,7 +50,7 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className="w-full  text-center border-t border-[#00000020]">
-				<p className="text-[#00000080] leading-10 text-[15px] font-normal">
+				<p className="text-[#00000080] leading-10 text-[12px] md:text-[15px] font-normal">
 					کلیه حقوق این وب سایت متعلق به تورینو میباشد.
 				</p>
 			</div>
