@@ -1,0 +1,23 @@
+.svg {
+    fill: #28A745;
+}
+.svgContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 2s linear  infinite;
+    padding: 126px;
+}
+.svgBase {
+    width: 100px;
+    height: 100px;
+}
+@keyframes rotate {
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
