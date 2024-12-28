@@ -12,8 +12,8 @@ import slide4 from "../../assets/image/slide4.png";
 
 const ImageSlider = () => {
 	return (
-		<main className="px-[126px] py-6 grid grid-cols-2 border-b border-[#00000020]">
-			<div>
+		<main className="2xl:px-[126px] w-full  py-6 grid grid-cols-1 xl:grid-cols-2 border-b border-[#00000020]">
+			<div className="sm:block hidden">
 				<div className="flex items-start gap-5">
 					<div className="w-[59px] h-[59px] rounded-full bg-gradient-to-b from-[#28A745] to-[#10411B] text-white font-semibold text-3xl flex items-center justify-center">
 						?
