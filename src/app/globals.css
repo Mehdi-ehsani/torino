@@ -23,10 +23,15 @@ body {
 	margin: auto;
 }
 .swiper {
-	width: 340px;
-	height: 420px;
+	width: 210px;
+	height: 250px;
 }
-
+@media (min-width:600px) {
+	.swiper {
+		width: 320px;
+		height: 400px;
+	}
+}
 .swiper-slide {
 	display: flex;
 	align-items: center;
