@@ -1,12 +1,13 @@
 "use client";
 import OtpInput from "react18-input-otp";
 
-import { setCookie } from "@/core/utils/cookie";
 import { useState } from "react";
 import Image from "next/image";
 import arrowImg from "../../../assets/image/arrow-left.png";
 import { useSendOtp } from "@/core/services/mutations";
 import Timer from "@/components/common/Timer";
+import toast from "react-hot-toast";
+
 
 const OtpForm = ({ number, setIsOtpShow, setIsShowLogin }) => {
 	const [otp, setOtp] = useState();
@@ -23,11 +24,10 @@ const OtpForm = ({ number, setIsOtpShow, setIsShowLogin }) => {
 			{
 				onSuccess: (data) => {
 					console.log("succes", data.data);
-					setCookie("accessToken", data.data.accessToken);
-					setCookie("refreshToken", data.data.refreshToken);
+					toast.success("با موفقیت وارد شدید")
 					setIsShowLogin(false);
 				},
-				onError: (error) => console.log(error),
+				onError: (error) => toast.error("کد تایید صحیح نمیباشد"),
 			}
 		);
 	};
@@ -41,7 +41,8 @@ const OtpForm = ({ number, setIsOtpShow, setIsShowLogin }) => {
 			<OtpInput
 				containerStyle={{ gap: "12px", direction: "ltr" }}
 				inputStyle={{
-					width: "58px",
+					width: "100%",
+					maxWidth: "53px",
 					height: "53px",
 					borderRadius: "6px",
 					border: "1px solid #00000025",
